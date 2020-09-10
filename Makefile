@@ -1,9 +1,9 @@
-all: main main2
-main: main.c gensnd.c
-	gcc -o main main.c gensnd.c -I. -lm
+all: gensine gendial
+gensine: main.c gensnd.c
+	gcc -o gensine main.c gensnd.c -I. -lm
 
-main2: main2.c
-	gcc -o main2 main2.c
+gendial: main2.c gensnd.c
+	gcc -o gendial main2.c gensnd.c -I. -lm
 
 clean:
-	rm main main2
+	rm gensine gendial
